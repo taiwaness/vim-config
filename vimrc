@@ -1,6 +1,3 @@
-
-execute pathogen#infect() 
-
 "vundle
 set nocompatible
 filetype off

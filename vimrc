@@ -1,3 +1,6 @@
+
+execute pathogen#infect() 
+
 "vundle
 set nocompatible
 filetype off
@@ -81,12 +84,12 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl set tabstop=4
 
 "spaces for indents
-au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw set expandtab
-au BufRead,BufNewFile *.py set softtabstop=4
+au BufRead,BufNewFile *.py,*pyw,*.pl set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw,*.pl set expandtab
+au BufRead,BufNewFile *.py,*pl set softtabstop=4
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
@@ -124,3 +127,15 @@ nnoremap <space> za
 
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+set hlsearch
